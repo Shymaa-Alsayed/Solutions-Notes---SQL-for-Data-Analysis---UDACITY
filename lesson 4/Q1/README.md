@@ -80,7 +80,7 @@ ORDER BY 3 DESC
 	     ON a.id=o.account_id
 	     GROUP BY 1,2
 	     ```
-		<img src="./outputs/Q1/t1res.PNG" width=600, height=300>
+		<img src="./outputs/t1res.PNG" width=600, height=300>
 
 
 2. #### A second table (t2) having just the distinct regions with their max total sales is required
@@ -113,7 +113,7 @@ ORDER BY 3 DESC
 		GROUP BY region
 		```
 
-		<img  src="./outputs/Q1/T2RES.PNG" width=600, height=300 >
+		<img  src="./outputs/T2RES.PNG" width=600, height=300 >
 
 
 3. #### using `WITH` statement, it is easy to create the two tables, we then write a main query that joins both tables on total sales to get the three pieces of info we need, the region, the rep name, max sales .
@@ -129,4 +129,4 @@ ORDER BY 3 DESC
 		```
 	    OUTPUT OF THE COMPLETE QUERY WHEN EXECUTED
 
-	    <img src="./outputs/Q1/QUERYRES.PNG" width=600, height=300>
+	    <img src="./outputs/QUERYRES.PNG" width=600, height=300>
