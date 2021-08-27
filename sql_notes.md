@@ -14,7 +14,7 @@
 
 By **default**, it orders and displays numbers  and alphabets in **ascending** order, and dates in **earlier** to latest order.
 
-Specifying DESC reverses ordering so, numbers and alphabets are in descending order, and dates are ordered latest first.
+Specifying `DESC` reverses ordering so, numbers and alphabets are in descending order, and dates are ordered latest first.
 
 we can order by the column name  or alias, or its index in the SELECT statement from left to right. (indexing starts from 1)
 
