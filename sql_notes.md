@@ -25,15 +25,15 @@ It is also helpful when column names are just too long, or when we have to order
 ### 3.WHERE Vs. HAVING
 Both WHERE and HAVING are used to filter result of a query and a query can contain both of them except that :
 
- 1. We can't filter on aggregate columns or columns that appear in GROUP BY using the `WHERE` clause, instead, we use the `HAVING` clause and it is written between the GROUP BY and the ORDER BY clause.
+ 1. We can't filter on aggregate columns or columns that appear in GROUP BY using the `WHERE` clause, instead, we use the `HAVING` clause and it is written between the GROUP BY  and the ORDER BY clause.
  
- 2.`WHERE` is applied first on individual rows in the tables, so whichever rows meet the `WHERE` condition are grouped and put in the result set first.
+ 2. `WHERE` is applied first on individual rows in the tables, so whichever rows meet the `WHERE` condition are grouped and put in the result set first.
  
- 3.The `HAVING` clause is then applied to the rows in the result set. Only the groups that meet the `HAVING` conditions appear in the query output.
+ 3. The `HAVING` clause is then applied to the rows in the result set. Only the groups that meet the `HAVING` conditions appear in the query output.
 
 
 > - Wrong syntax: WHERE aggreg_function(column) > number
-  - Correct syntax: **HAVING aggreg_function(column)> number**
+> - Correct syntax: **HAVING aggreg_function(column)> number**
 
 ### 4. Aggregate Functions IGNORE NULLs in columns.
 This goes for all functions like COUNT, SUM, AVG,..etc
