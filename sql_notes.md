@@ -141,3 +141,26 @@ cume_dist
 percent_rank
 first_value
 ```
+
+### 11. Performance Tuning
+While SQL can handle huge data, it could have long query runtime, we can control some high-level factors to limit time of execution of a query by decreasing he number of calculations it does.
+These factors are:
+- Table size
+- Joins
+- Aggregations
+
+Query runtime is also dependent on some things that you can’t really control related to the database itself:
+
+- Other users running queries concurrently on the database
+- Database software and optimization (e.g., Postgres is optimized differently than Redshift, fast reading and writings of rows for Postgres Vs. Fast aggreations for Redshift)
+
+##### **Tips to reduce runtime of a query:**
+
+1. Limit table size, this could be achieved through building the query on a subset of data when doing EDA for example to save time, then run it on the whole data when the query is optimized. 
+> TIP: using `LIMIT` with aggregations will not decrease query runtime because *aggregations are executed* first on all the data then `LIMIT` displays the desired portion of the RESULT SET. Limiting Should be performed first in a subquery to get a subset of the dataset and then, perform the desired aggregations.
+
+2. Make the joins less complicated by reducing the number of rows evaluated during the join. Reducing table size before joining by aggregating a table on a column for example in order to reduce the number of times rows of one table are compared to the other can reduce the cost of join substantially.
+
+3. use `EXPLAIN` at the beggining of a query as a reference for the query plan. It shows the order in which the query will be executed and the cost of the steps. Using it as a guide to try to find the most expensive steps and hopefully make them less expensive.
+
+4. Use subqueries to write more effiecient joins. if joining two tables would result in way larger result set than original tables, it might be more efficient to aggregate each table in a subquery and then join the subquerieson the aggregated rows to reduce number of rows that will result of the join.
