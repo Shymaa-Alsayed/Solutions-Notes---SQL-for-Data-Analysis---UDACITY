@@ -1,3 +1,16 @@
+# Overview
+
+This repo contains two parts:
+- My own notes and tips and tricks I took during the course SQL for Data Analysis- Udacity
+- Tutorial of my solutions of the quizes of each lesson.
+
+Below is the first part Notes and Tips, the tutorial solutions are in subfolders named by lesson number.
+
+
+
+## My Notes & Tips and Tricks
+
+
 ###  1. Logical Order of writing sql clauses
 
 * SELECT (DISTINCT) , CASE WHEN, DATE FUNCTIONS, WINDOW FUNCTIONS
